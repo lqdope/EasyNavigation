@@ -1,5 +1,5 @@
 const urlMap = {
-  'enter|wc-enter': 'https://example.com/videos/cam1-local.mp4',
+  'enter|wc-enter': './document_5373327128966236948.mp4',
   'enter|cassa': 'https://example.com/streams/cam1.m3u8',
   'enter|hall-enter': 'https://example.com/streams/cam1.m3u8',
 
@@ -101,53 +101,37 @@ function renderPairs(){
       setVideoSrc(f,t);
     });
   });
-  pairsList.querySelectorAll('.del-btn').forEach(b=>{
-    b.addEventListener('click', (e)=>{
-      const key = e.currentTarget.dataset.key;
-      savedPairs = savedPairs.filter(k=>k!==key);
-      renderPairs();
-      log('Пара удалена');
-    });
-  });
-  pairsList.querySelectorAll('.edit-btn').forEach(b=>{
-    b.addEventListener('click', (e)=>{
-      const key = e.currentTarget.dataset.key;
-      const [f,t] = key.split('|');
-      fromSelect.value = f;
-      toSelect.value = t;
-      log('Пара загружена в форму для редактирования');
-    });
-  });
+
 }
 
-// Extra buttons
-openBtn.addEventListener('click', ()=>{
-  const url = currentUrlEl.textContent;
-  if(!url || url==='—') return;
-  window.open(url, '_blank');
-});
-copyBtn.addEventListener('click', async ()=>{
-  const url = currentUrlEl.textContent;
-  if(!url || url==='—') return;
-  try{
-    await navigator.clipboard.writeText(url);
-    log('URL скопирован');
-  }catch{
-    log('Не удалось скопировать URL');
-  }
-});
-downloadBtn.addEventListener('click', ()=>{
-  const url = currentUrlEl.textContent;
-  if(!url || url==='—') return;
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = '';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  log('Начата загрузка (если доступно)');
-});
+// // Extra buttons
+// openBtn.addEventListener('click', ()=>{
+//   const url = currentUrlEl.textContent;
+//   if(!url || url==='—') return;
+//   window.open(url, '_blank');
+// });
+// copyBtn.addEventListener('click', async ()=>{
+//   const url = currentUrlEl.textContent;
+//   if(!url || url==='—') return;
+//   try{
+//     await navigator.clipboard.writeText(url);
+//     log('URL скопирован');
+//   }catch{
+//     log('Не удалось скопировать URL');
+//   }
+// });
+// downloadBtn.addEventListener('click', ()=>{
+//   const url = currentUrlEl.textContent;
+//   if(!url || url==='—') return;
+//   const a = document.createElement('a');
+//   a.href = url;
+//   a.download = '';
+//   document.body.appendChild(a);
+//   a.click();
+//   a.remove();
+//   log('Начата загрузка (если доступно)');
+// });
 
 // initial render
-renderPairs();
-log('готов.');
+//renderPairs();
+//log('готов.');
