@@ -1,15 +1,15 @@
 const urlMap = {
   'enter|wc-enter': './document_5373327128966236948.mp4',
-  'enter|cassa': 'https://example.com/streams/cam1.m3u8',
-  'enter|hall-enter': 'https://example.com/streams/cam1.m3u8',
+  'enter|cassa': './VID20250923213427.mp4',
+  'enter|hall-enter': '',
 
-  'wc-exit|enter': 'https://example.com/videos/cam1-local.mp4',
-  'wc-exit|cassa': 'https://example.com/streams/cam1.m3u8',
-  'wc-exit|hall-enter': 'https://example.com/streams/cam1.m3u8',
+  'wc-exit|enter': './VID20250924094239.mp4',
+  'wc-exit|cassa': '',
+  'wc-exit|hall-enter': '',
 
-  'hall-exi|wc-enter': 'https://example.com/videos/cam1-local.mp4',
-  'hall-exi|cassa': 'https://example.com/streams/cam1.m3u8',
-  'hall-exit|hall-enter': 'https://example.com/streams/cam1.m3u8',
+  'hall-exi|wc-enter': '',
+  'hall-exi|cassa': '',
+  'hall-exit|hall-enter': '',
 };
 const fromSelect = document.getElementById('fromSelect');
 const toSelect = document.getElementById('toSelect');
