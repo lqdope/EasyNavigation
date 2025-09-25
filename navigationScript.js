@@ -1,17 +1,16 @@
-// Простая логика управления плеером и сохранёнными парами
-
 const urlMap = {
-  'cam1|local': 'https://example.com/videos/cam1-local.mp4',
-  'cam1|stream': 'https://example.com/streams/cam1.m3u8',
-  'cam1|archive': 'https://example.com/archive/cam1.mp4',
-  'cam2|local': 'https://example.com/videos/cam2-local.mp4',
-  'cam2|stream': 'https://example.com/streams/cam2.m3u8',
-  'cam2|archive': 'https://example.com/archive/cam2.mp4',
-  'fileA|local': 'https://example.com/videos/fileA.mp4',
-  'fileA|stream': 'https://example.com/streams/fileA.m3u8',
-  'fileA|archive': 'https://example.com/archive/fileA.mp4'
-};
+  'enter|wc-enter': 'https://example.com/videos/cam1-local.mp4',
+  'enter|cassa': 'https://example.com/streams/cam1.m3u8',
+  'enter|hall-enter': 'https://example.com/streams/cam1.m3u8',
 
+  'wc-exit|enter': 'https://example.com/videos/cam1-local.mp4',
+  'wc-exit|cassa': 'https://example.com/streams/cam1.m3u8',
+  'wc-exit|hall-enter': 'https://example.com/streams/cam1.m3u8',
+
+  'hall-exi|wc-enter': 'https://example.com/videos/cam1-local.mp4',
+  'hall-exi|cassa': 'https://example.com/streams/cam1.m3u8',
+  'hall-exit|hall-enter': 'https://example.com/streams/cam1.m3u8',
+};
 const fromSelect = document.getElementById('fromSelect');
 const toSelect = document.getElementById('toSelect');
 const applyBtn = document.getElementById('applyBtn');
@@ -25,9 +24,6 @@ const openBtn = document.getElementById('openBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const copyBtn = document.getElementById('copyBtn');
 
-let savedPairs = [];
-
-// Helpers
 function log(text){ playerLog.textContent = 'Лог: ' + text }
 function setStatus(text){ statusText.textContent = text }
 function getKey(f,t){ return `${f}|${t}` }
@@ -77,13 +73,6 @@ applyBtn.addEventListener('click', ()=>{
   setVideoSrc(fromSelect.value, toSelect.value);
 });
 
-savePairBtn.addEventListener('click', ()=>{
-  const key = getKey(fromSelect.value, toSelect.value);
-  if(savedPairs.includes(key)) return;
-  savedPairs.push(key);
-  renderPairs();
-  log('Пара сохранена');
-});
 
 function renderPairs(){
   pairsList.innerHTML = '';
