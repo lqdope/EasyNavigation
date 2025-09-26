@@ -1,20 +1,36 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Easy Navigation</title>
   <link rel="stylesheet" href="indexDesign.css" />
 </head>
+
 <body>
   <div class="container">
+    <div>
     <header class="card header">
       <div class="brand">
         <strong>Навигация</strong>
       </div>
       <div class="status" id="statusText">Готов</div>
     </header>
-
+    <main>
+      <section class="card player-area">
+        <div class="player">
+          <video id="player" controls playsinline preload="metadata">
+            Ваш браузер не поддерживает элемент &lt;video&gt;.
+          </video>
+        </div>
+        <!-- <div class="meta">
+          <div>URL: <span id="currentUrl" class="muted">—</span></div>
+          <div id="playerLog" class="log muted">Лог: готов.</div>
+        </div> -->
+      </section>
+    </main>
+    </div>
     <aside class="card controls">
       <div class="control-row">
         <label class="label">Откуда</label>
@@ -47,21 +63,10 @@
       </ul> -->
     </aside>
 
-    <main>
-      <section class="card player-area">
-        <div class="player">
-          <video id="player" controls playsinline preload="metadata">
-            Ваш браузер не поддерживает элемент &lt;video&gt;.
-          </video>
-        </div>
-        <!-- <div class="meta">
-          <div>URL: <span id="currentUrl" class="muted">—</span></div>
-          <div id="playerLog" class="log muted">Лог: готов.</div>
-        </div> -->
-      </section>
-    </main>
+
   </div>
 
   <script src="navigationScript.js"></script>
 </body>
+
 </html>
