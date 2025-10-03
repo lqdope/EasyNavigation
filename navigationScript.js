@@ -1,85 +1,95 @@
 const urlMap = {
-  'enter|wc-enter': './document_5373327128966236948.mp4',
-  'enter|cassa': './VID20250923213427.mp4',
-  'enter|hall-enter': '',
-
-  'wc-exit|enter': './VID20250924094239.mp4',
-  'wc-exit|cassa': '',
-  'wc-exit|hall-enter': '',
-
-  'hall-exi|wc-enter': '',
-  'hall-exi|cassa': '',
-  'hall-exit|hall-enter': '',
+  "enter|platform-1": "./platform_1.mp4",
+  "enter|platform-245": "./platform_2_4_5.mp4",
+  "enter|cassa": "./cassa.mp4",
+  "enter|restroom": "./restroom.mp4",
+  "enter|hall-enter-floor1": "./hall_1_floor.mp4",
+  "enter|hall-enter-floor2": "./hall_2_floor.mp4",
 };
-const fromSelect = document.getElementById('fromSelect');
-const toSelect = document.getElementById('toSelect');
-const applyBtn = document.getElementById('applyBtn');
-const savePairBtn = document.getElementById('savePairBtn');
-const player = document.getElementById('player');
-const statusText = document.getElementById('statusText');
-const currentUrlEl = document.getElementById('currentUrl');
-const playerLog = document.getElementById('playerLog');
-const pairsList = document.getElementById('pairsList');
-const openBtn = document.getElementById('openBtn');
-const downloadBtn = document.getElementById('downloadBtn');
-const copyBtn = document.getElementById('copyBtn');
+const fromSelect = document.getElementById("fromSelect");
+const toSelect = document.getElementById("toSelect");
+const applyBtn = document.getElementById("applyBtn");
+const savePairBtn = document.getElementById("savePairBtn");
+const player = document.getElementById("player");
+const statusText = document.getElementById("statusText");
+const currentUrlEl = document.getElementById("currentUrl");
+const playerLog = document.getElementById("playerLog");
+const pairsList = document.getElementById("pairsList");
+const openBtn = document.getElementById("openBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+const copyBtn = document.getElementById("copyBtn");
 
-function log(text){ playerLog.textContent = 'Лог: ' + text }
-function setStatus(text){ statusText.textContent = text }
-function getKey(f,t){ return `${f}|${t}` }
-function getUrlFor(f,t){ return urlMap[getKey(f,t)] || null }
+function log(text) {
+  playerLog.textContent = "Лог: " + text;
+}
+function setStatus(text) {
+  statusText.textContent = text;
+}
+function getKey(f, t) {
+  return `${f}|${t}`;
+}
+function getUrlFor(f, t) {
+  return urlMap[getKey(f, t)] || null;
+}
 
-function setVideoSrc(from, to){
-  const url = getUrlFor(from,to);
-  if(!url){
-    setStatus('Ошибка');
-    log('Для выбранной комбинации видео не найдено');
+function setVideoSrc(from, to) {
+  const url = getUrlFor(from, to);
+  if (!url) {
+    setStatus("Ошибка");
+    log("Для выбранной комбинации видео не найдено");
     return;
   }
 
   // handle HLS: basic approach, prefer native if available
-  if(url.endsWith('.m3u8')){
-    if(player.canPlayType('application/vnd.apple.mpegurl')){
+  if (url.endsWith(".m3u8")) {
+    if (player.canPlayType("application/vnd.apple.mpegurl")) {
       player.src = url;
       player.load();
-      player.play().catch(()=>{});
-    } else if(window.Hls){
-      if(window.hlsInstance){ window.hlsInstance.destroy(); window.hlsInstance = null }
+      player.play().catch(() => {});
+    } else if (window.Hls) {
+      if (window.hlsInstance) {
+        window.hlsInstance.destroy();
+        window.hlsInstance = null;
+      }
       const hls = new Hls();
       window.hlsInstance = hls;
       hls.loadSource(url);
       hls.attachMedia(player);
-      hls.on(Hls.Events.MANIFEST_PARSED, ()=> player.play().catch(()=>{}));
+      hls.on(Hls.Events.MANIFEST_PARSED, () => player.play().catch(() => {}));
     } else {
-      setStatus('HLS недоступен');
-      log('HLS-плейлист выбран, но hls.js не подключён и браузер не поддерживает HLS');
+      setStatus("HLS недоступен");
+      log(
+        "HLS-плейлист выбран, но hls.js не подключён и браузер не поддерживает HLS"
+      );
       return;
     }
   } else {
-    if(window.hlsInstance){ window.hlsInstance.destroy(); window.hlsInstance = null }
+    if (window.hlsInstance) {
+      window.hlsInstance.destroy();
+      window.hlsInstance = null;
+    }
     player.pause();
     player.src = url;
     player.load();
-    player.play().catch(()=>{});
+    player.play().catch(() => {});
   }
 
-  setStatus('Воспроизведение');
+  setStatus("Воспроизведение");
   currentUrlEl.textContent = url;
   log(`Запущено: ${from} → ${to}`);
 }
 
 // UI actions
-applyBtn.addEventListener('click', ()=>{
+applyBtn.addEventListener("click", () => {
   setVideoSrc(fromSelect.value, toSelect.value);
 });
 
-
-function renderPairs(){
-  pairsList.innerHTML = '';
-  savedPairs.forEach(key=>{
-    const [from,to] = key.split('|');
-    const li = document.createElement('li');
-    li.className = 'pair-item';
+function renderPairs() {
+  pairsList.innerHTML = "";
+  savedPairs.forEach((key) => {
+    const [from, to] = key.split("|");
+    const li = document.createElement("li");
+    li.className = "pair-item";
     li.innerHTML = `
       <div class="pair-label">${from} → ${to}</div>
       <div class="pair-actions">
@@ -92,16 +102,15 @@ function renderPairs(){
   });
 
   // attach listeners
-  pairsList.querySelectorAll('.play-btn').forEach(b=>{
-    b.addEventListener('click', (e)=>{
+  pairsList.querySelectorAll(".play-btn").forEach((b) => {
+    b.addEventListener("click", (e) => {
       const key = e.currentTarget.dataset.key;
-      const [f,t] = key.split('|');
+      const [f, t] = key.split("|");
       fromSelect.value = f;
       toSelect.value = t;
-      setVideoSrc(f,t);
+      setVideoSrc(f, t);
     });
   });
-
 }
 
 // // Extra buttons

@@ -17,6 +17,40 @@
         </div>
         <button id="businessBtn" class="btn btn-primary"><a href="templatePage.html">Хочу также</a></button>
       </header>
+      <aside class="card controls">
+        <div class="control-row">
+          <label class="label">Откуда</label>
+          <select id="fromSelect" class="select">
+            <option value="enter">Вход</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <label class="label">Куда</label>
+          <select id="toSelect" class="select">
+            <option value="platform-1">Платформа 1</option>
+            <option value="platform-245">Платформа 2, 4, 5</option>
+            <option value="cassa">Кассы</option>
+            <option value="restroom">Туалет</option>
+            <option value="hall-enter-floor1">Зал ожиданий 1 этаж</option>
+            <option value="hall-enter-floor2">Зал ожиданий 2 этаж</option>
+
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="applyBtn" class="btn btn-primary">Узнать маршрут</button>
+          <!-- <button id="savePairBtn" class="btn btn-ghost">Сохранить пару</button> -->
+        </div>
+
+        <!-- <div class="hint">Поддерживаемые форматы: <span class="muted">.mp4, .m3u8</span></div>
+
+      <h4 class="section-title">Сохранённые пары</h4>
+      <ul id="pairsList" class="pairs-list">
+      
+      </ul> -->
+      </aside>
+
       <main>
         <section class="card player-area">
           <div class="player">
@@ -31,38 +65,6 @@
         </section>
       </main>
     </div>
-    <aside class="card controls">
-      <div class="control-row">
-        <label class="label">Откуда</label>
-        <select id="fromSelect" class="select">
-          <option value="enter">Вход</option>
-          <option value="wc-exit">из туалета</option>
-          <option value="hall-exit">Зал ожиданий</option>
-        </select>
-      </div>
-
-      <div class="control-row">
-        <label class="label">Куда</label>
-        <select id="toSelect" class="select">
-          <option value="wc-enter">Туалет вход</option>
-          <option value="cassa">Кассы</option>
-          <option value="hall-enter">Зал ожиданий</option>
-        </select>
-      </div>
-
-      <div class="actions">
-        <button id="applyBtn" class="btn btn-primary">Применить</button>
-        <!-- <button id="savePairBtn" class="btn btn-ghost">Сохранить пару</button> -->
-      </div>
-
-      <!-- <div class="hint">Поддерживаемые форматы: <span class="muted">.mp4, .m3u8</span></div>
-
-      <h4 class="section-title">Сохранённые пары</h4>
-      <ul id="pairsList" class="pairs-list">
-      
-      </ul> -->
-    </aside>
-
 
   </div>
 
