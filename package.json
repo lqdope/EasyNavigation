@@ -1,0 +1,27 @@
+{
+  "name": "easynavigation",
+  "version": "1.0.0",
+  "main": "TemplateScript.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lqdope/EasyNavigation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lqdope/EasyNavigation/issues"
+  },
+  "homepage": "https://github.com/lqdope/EasyNavigation#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
