@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Загрузка видео</title>
+  <style>
+    :root {
+      --accent: #2563EB;
+      --white: #FFFFFF;
+      --black: #15171B;
+      --muted: #7B8794;
+      --radius: 12px;
+      --gap: 16px;
+      --max-size: 500;
+      /* MB default */
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f6f8fb 0, #fff 100%);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 20px rgba(21, 23, 27, 0.06);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    .drop {
+      margin-top: 14px;
+      border: 2px dashed rgba(37, 99, 235, 0.18);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.02), rgba(255, 255, 255, 0));
+      transition: background .15s, border-color .15s;
+    }
+
+    .drop.dragover {
+      background: rgba(37, 99, 235, 0.04);
+      border-color: rgba(37, 99, 235, 0.36);
+    }
+
+    .drop .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .drop-info {
+      flex: 1
+    }
+
+    .drop-info p {
+      margin: 0
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 0;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(21, 23, 27, 0.06);
+      color: var(--black);
+    }
+
+    .file-input {
+      display: none
+    }
+
+    .preview {
+      margin-top: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      display: none;
+      position: relative;
+    }
+
+    .preview video {
+      width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .preview .meta {
+      padding: 10px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
+      color: #fff;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .progress-wrap {
+      margin-top: 14px;
+      display: none
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      background: #eee;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress>i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width .2s linear
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .error {
+      color: #D14343;
+      font-size: 13px;
+      margin-top: 10px
+    }
+
+    @media (max-width:420px) {
+      body {
+        padding: 14px
+      }
+
+      .card {
+        padding: 14px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" role="main" aria-labelledby="title">
+      <div class="header">
+        <a href="/" style="text-decoration:none;">
+          <div class="back" id="backBtn" title="Назад">‹</div>
+        </a>
+        <div>
+          <div id="title" class="title">Загрузить видео маршрута</div>
+          <div class="subtitle">Для создателей маршрутов — добавьте ролик к навигации</div>
+        </div>
+      </div>
+      <label class="drop" id="dropZone" for="fileInput" tabindex="0" aria-label="Зона загрузки">
+        <div class="icon">▶</div>
+        <div class="drop-info">
+          <p style="font-weight:700">Перетащите видео или нажмите для выбора</p>
+          <p class="muted">MP4, MOV, до <span id="maxSizeLabel">500</span> MB</p>
+        </div>
+      </label>
+      <input id="fileInput" class="file-input" type="file" accept="video/*" />
+      <div class="actions">
+        <button class="btn btn-primary" id="selectBtn">Выбрать файл</button>
+        <button class="btn btn-ghost" id="clearBtn">Очистить</button>
+      </div>
+
+      <div class="preview" id="preview">
+        <video id="previewVideo" controls playsinline></video>
+        <div class="meta">
+          <span id="fileInfo">—</span>
+          <div style="display:flex;gap:8px">
+            <button class="btn" id="uploadBtn"
+              style="background:rgba(255,255,255,0.12); color:#fff; padding:6px 10px; border-radius:8px;">Загрузить</button>
+            <button class="btn" id="removeBtn"
+              style="background:rgba(255,255,255,0.08); color:#fff; padding:6px 10px; border-radius:8px;">Удалить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="row small">
+          <div>Статус:</div>
+          <div id="statusText" style="margin-left:auto">Ожидание</div>
+        </div>
+        <div class="progress" aria-hidden="true">
+          <i id="progressBar"></i>
+        </div>
+        <div class="row">
+          <button class="btn btn-ghost" id="cancelBtn">Отменить загрузку</button>
+          <div class="small" style="margin-left:auto" id="percentText">0%</div>
+        </div>
+      </div>
+
+      <div class="error" id="errorMsg" role="alert" style="display:none"></div>
+
+    </div>
+  </div>
+  <script src="./upldVid.js"></script>
+</body>
+
+</html>
