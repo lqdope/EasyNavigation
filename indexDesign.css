@@ -176,7 +176,7 @@ a{
   line-height: var(--link-line-height, 22px);
   letter-spacing: var(--link-letter-spacing, -0.02em);
   font-weight: var(--link-font-weight, 600);
-  text-decoration: underline;
+  /* text-decoration: underline; */
   position: absolute;
   left: 24px;
   top: 42px;
@@ -216,7 +216,7 @@ a{
   color: var(--white, #ffffff);
   text-align: center;
   font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
-  font-size: var(--link-font-size, 16px);
+  font-size: var(--link-font-size, 14px);
   line-height: var(--link-line-height, 22px);
   letter-spacing: var(--link-letter-spacing, -0.02em);
   font-weight: var(--link-font-weight, 600);
