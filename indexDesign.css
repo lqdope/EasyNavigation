@@ -225,6 +225,19 @@ a{
   left: 175px;
   top: 42px;
 }
+.pochta-pochta-com2 {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 14px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: none;
+  position: absolute;
+  left: 175px;
+  top: 73px;
+}
 .div2 {
   color: var(--primary, #545f71);
   text-align: left;
