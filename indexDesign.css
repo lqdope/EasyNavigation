@@ -1,7 +1,97 @@
-:root{
+/* Figma Styles of your File */
+:root {
   --bg:#F7FAFC; --card:#fff; --accent:#2563EB; --accent-2:#1D4ED8;
   --text:#0F172A; --muted:#6B7280; --shadow:0 6px 18px rgba(2,6,23,0.06);
+  /* Colors */
+  --primary: #545f71;
+  --secondary: #9ba5b7;
+  --tertiary: #eef1f4;
+  --white: #ffffff;
+  --annotations: #f6be2c;
+  --button-acent: #2563eb;
+  --15171b: #15171b;
+
+  /* Fonts */
+  --h1-font-family: Inter-Bold, sans-serif;
+  --h1-font-size: 48px;
+  --h1-line-height: 48px;
+  --h1-font-weight: 700;
+  --h1-font-style: normal;
+  --h2-font-family: Inter-Bold, sans-serif;
+  --h2-font-size: 32px;
+  --h2-line-height: 36px;
+  --h2-font-weight: 700;
+  --h2-font-style: normal;
+  --h3-font-family: Inter-Bold, sans-serif;
+  --h3-font-size: 24px;
+  --h3-line-height: 30px;
+  --h3-font-weight: 700;
+  --h3-font-style: normal;
+  --body-font-family: Inter-Regular, sans-serif;
+  --body-font-size: 16px;
+  --body-line-height: 22px;
+  --body-font-weight: 400;
+  --body-font-style: normal;
+  --body-heavy-font-family: Inter-SemiBold, sans-serif;
+  --body-heavy-font-size: 16px;
+  --body-heavy-line-height: 22px;
+  --body-heavy-font-weight: 600;
+  --body-heavy-font-style: normal;
+  --body-small-font-family: Inter-Regular, sans-serif;
+  --body-small-font-size: 14px;
+  --body-small-line-height: 19px;
+  --body-small-font-weight: 400;
+  --body-small-font-style: normal;
+  --body-small-heavy-font-family: Inter-SemiBold, sans-serif;
+  --body-small-heavy-font-size: 14px;
+  --body-small-heavy-line-height: 19px;
+  --body-small-heavy-font-weight: 600;
+  --body-small-heavy-font-style: normal;
+  --link-font-family: Inter-SemiBold, sans-serif;
+  --link-font-size: 16px;
+  --link-line-height: 22px;
+  --link-font-weight: 600;
+  --link-font-style: normal;
+  --header-1-font-family: KantumruyPro-Bold, sans-serif;
+  --header-1-font-size: 40px;
+  --header-1-line-height: 20px;
+  --header-1-font-weight: 700;
+  --header-1-font-style: normal;
+  --header-2-font-family: KantumruyPro-Bold, sans-serif;
+  --header-2-font-size: 32px;
+  --header-2-line-height: 20px;
+  --header-2-font-weight: 700;
+  --header-2-font-style: normal;
+  --header-3-font-family: KantumruyPro-Bold, sans-serif;
+  --header-3-font-size: 24px;
+  --header-3-line-height: 20px;
+  --header-3-font-weight: 700;
+  --header-3-font-style: normal;
+  --body-1-font-family: KantumruyPro-SemiBold, sans-serif;
+  --body-1-font-size: 20px;
+  --body-1-line-height: 20px;
+  --body-1-font-weight: 600;
+  --body-1-font-style: normal;
+  --body-2-font-family: KantumruyPro-Medium, sans-serif;
+  --body-2-font-size: 20px;
+  --body-2-line-height: 20px;
+  --body-2-font-weight: 500;
+  --body-2-font-style: normal;
+  --body-3-font-family: KantumruyPro-Regular, sans-serif;
+  --body-3-font-size: 20px;
+  --body-3-line-height: 20px;
+  --body-3-font-weight: 400;
+  --body-3-font-style: normal;
+
+  /* Effects */
+  --shadow-box-shadow: 0px 4px 30.8px 0px rgba(189, 209, 253, 0.65),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 10px 3px rgba(0, 0, 0, 0.17);
+  --back-panel-box-shadow: 0px 4px 30.8px 0px rgba(189, 209, 253, 0.65),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 10px 3px rgba(0, 0, 0, 0.17);
+  --back-panel-backdrop-filter: blur(8px);
 }
+/* Figma Color Variables of your File */
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -11,7 +101,14 @@ body{
 a{
   color: #FAFBFF;
 }
-.container{max-width:1100px; width:100%; display:grid; grid-template-columns:360px 1fr; gap:20px; align-items:start}
+/* .main-container{
+  max-width:1100px; 
+  width:100%;
+  display: flex;
+  align-items: end;
+  justify-content: flex-end ;
+} */
+.container{max-width:1100px; width:100%;  display:grid; grid-template-columns:360px 1fr;  align-items:start}
 .card{background:var(--card); box-shadow:var(--shadow); border-radius:10px; padding:16px}
 .header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
 .brand{font-size:16px}
@@ -43,4 +140,119 @@ a{
   .container{grid-template-columns:1fr; padding-bottom:20px}
   .controls{order:2}
   .player-area{order:1}
+}
+.bottom-block,
+.bottom-block * {
+  box-sizing: border-box;
+}
+.bottom-block {
+  background: #2d2d2d;
+  border-radius: 24px 24px 0px 0px;
+  padding: 14px 24px 14px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+  row-gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 207px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box; /* чтобы padding учитывался в ширине */
+}
+.authors {
+  flex-shrink: 0;
+  width: 95px;
+  height: 81px;
+  position: static;
+}
+.tg-account {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 16px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: underline;
+  position: absolute;
+  left: 24px;
+  top: 42px;
+}
+.tg-account2 {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 16px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: underline;
+  position: absolute;
+  left: 24px;
+  top: 73px;
+}
+.div {
+  color: var(--primary, #545f71);
+  text-align: left;
+  font-family: var(--body-heavy-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--body-heavy-font-size, 16px);
+  line-height: var(--body-heavy-line-height, 22px);
+  letter-spacing: var(--body-heavy-letter-spacing, -0.02em);
+  font-weight: var(--body-heavy-font-weight, 600);
+  position: absolute;
+  left: 24px;
+  top: 14px;
+}
+.support {
+  flex-shrink: 0;
+  width: 157px;
+  height: 50px;
+  position: static;
+}
+.pochta-pochta-com {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 16px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: underline;
+  position: absolute;
+  left: 175px;
+  top: 42px;
+}
+.div2 {
+  color: var(--primary, #545f71);
+  text-align: left;
+  font-family: var(--body-heavy-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--body-heavy-font-size, 16px);
+  line-height: var(--body-heavy-line-height, 22px);
+  letter-spacing: var(--body-heavy-letter-spacing, -0.02em);
+  font-weight: var(--body-heavy-font-weight, 600);
+  position: absolute;
+  left: 175px;
+  top: 14px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Минимальная высота вьюпорта */
+}
+
+main {
+    flex: 1 0 auto; /* Основной контент занимает все доступное пространство */
+}
+
+footer {
+    /* Ваши стили подвала из примера выше */
+    flex-shrink: 0; /* Запрещает сжиматься */
 }

@@ -9,66 +9,82 @@
 </head>
 
 <body>
-  <div class="container">
-    <div>
-      <header class="card header">
-        <div class="brand">
-          <strong>Навигация</strong>
-        </div>
-        <button id="businessBtn" class="btn btn-primary"><a href="templatePage.html">Хочу также</a></button>
-      </header>
-      <aside class="card controls">
-        <div class="control-row">
-          <label class="label">Откуда</label>
-          <select id="fromSelect" class="select">
-            <option value="enter">Вход</option>
-          </select>
-        </div>
+  </div>
+  <div class="wrapper">
+    <main>
+      <div class="container">
+        <div>
+          <header class="card header">
+            <div class="brand">
+              <strong>Навигация</strong>
+            </div>
+            <!-- <button id="businessBtn" class="btn btn-primary"><a href="templatePage.html">Хочу также</a></button> -->
+          </header>
+          <aside class="card controls">
+            <div class="control-row">
+              <label class="label">Откуда</label>
+              <select id="fromSelect" class="select">
+                <option value="enter">Вход</option>
+              </select>
+            </div>
 
-        <div class="control-row">
-          <label class="label">Куда</label>
-          <select id="toSelect" class="select">
-            <option value="platform-1">Платформа 1</option>
-            <option value="platform-245">Платформа 2, 4, 5</option>
-            <option value="cassa">Кассы</option>
-            <option value="restroom">Туалет</option>
-            <option value="hall-enter-floor1">Зал ожиданий 1 этаж</option>
-            <option value="hall-enter-floor2">Зал ожиданий 2 этаж</option>
+            <div class="control-row">
+              <label class="label">Куда</label>
+              <select id="toSelect" class="select">
+                <option value="platform-1">Платформа 1</option>
+                <option value="platform-245">Платформа 2, 4, 5</option>
+                <option value="cassa">Кассы</option>
+                <option value="restroom">Туалет</option>
+                <option value="hall-enter-floor1">Зал ожиданий 1 этаж</option>
+                <option value="hall-enter-floor2">Зал ожиданий 2 этаж</option>
 
-          </select>
-        </div>
+              </select>
+            </div>
 
-        <div class="actions">
-          <button id="applyBtn" class="btn btn-primary">Узнать маршрут</button>
-          <!-- <button id="savePairBtn" class="btn btn-ghost">Сохранить пару</button> -->
-        </div>
+            <div class="actions">
+              <button id="applyBtn" class="btn btn-primary">Узнать маршрут</button>
+              <!-- <button id="savePairBtn" class="btn btn-ghost">Сохранить пару</button> -->
+            </div>
 
-        <!-- <div class="hint">Поддерживаемые форматы: <span class="muted">.mp4, .m3u8</span></div>
+            <!-- <div class="hint">Поддерживаемые форматы: <span class="muted">.mp4, .m3u8</span></div>
 
       <h4 class="section-title">Сохранённые пары</h4>
       <ul id="pairsList" class="pairs-list">
       
       </ul> -->
-      </aside>
+          </aside>
 
-      <main>
-        <section class="card player-area">
-          <div class="player">
-            <video id="player" controls playsinline preload="metadata">
-              Ваш браузер не поддерживает элемент &lt;video&gt;.
-            </video>
-          </div>
-          <!-- <div class="meta">
+          <main>
+            <section class="card player-area">
+              <div class="player">
+                <video id="player" controls playsinline preload="metadata">
+                  Ваш браузер не поддерживает элемент &lt;video&gt;.
+                </video>
+              </div>
+              <!-- <div class="meta">
           <div>URL: <span id="currentUrl" class="muted">—</span></div>
           <div id="playerLog" class="log muted">Лог: готов.</div>
         </div> -->
-        </section>
-      </main>
-    </div>
-
+            </section>
+          </main>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="bottom-block">
+        <div class="authors">
+          <div class="tg-account">@tgAccount</div>
+          <div class="tg-account2">@tgAccount</div>
+          <div class="div">Авторы:</div>
+        </div>
+        <div class="support">
+          <div class="pochta-pochta-com">pochta@pochta.com</div>
+          <div class="div2">Поддержка:</div>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <script src="navigationScript.js"></script>
+    <script src="navigationScript.js"></script>
 </body>
 
 </html>
