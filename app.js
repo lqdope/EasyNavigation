@@ -30,7 +30,8 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({ storage: storage, fileFilter: fileFilter})
 
 app.get('/', (req, res) => {
-  res.send("Hello!")
+  //res.send("Hello!")
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 //Название ключа запроса и максимальное кол-во файлов
 
