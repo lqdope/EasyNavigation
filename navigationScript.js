@@ -3,7 +3,7 @@ const urlMap = {
   "enter|platform-245": "./platform_2_4_5.mp4",
   "enter|cassa": "./cassa.mp4",
   "enter|restroom": "./restroom.mp4",
-  "enter|hall-enter-floor1": "./hall_1_floor.mp4",
+  "enter|hall-enter-floor1": "./",
   "enter|hall-enter-floor2": "./hall_2_floor.mp4",
 };
 const fromSelect = document.getElementById("fromSelect");
