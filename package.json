@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "TemplateScript.js",
   "scripts": {
-    "serverLaunch": "nodemon app.js"
+    "serverLaunch": "nodemon app.js nodemon server.js"
   },
   "repository": {
     "type": "git",

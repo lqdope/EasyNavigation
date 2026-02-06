@@ -1,0 +1,445 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
+
+body{
+  margin: 0;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.home-page,
+.home-page * {
+  box-sizing: border-box;
+}
+.home-page {
+  background: #f7fafc;
+  border-radius: 24px;
+  height: 812px;
+  position: relative;
+  overflow: hidden;
+}
+.buttons {
+  position: absolute;
+  inset: 0;
+}
+.enter-btn {
+  background: var(--button-acent, #2563eb);
+  border-radius: 6px;
+  padding: 12px 16px 12px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 358px;
+  height: 55px;
+  position: absolute;
+  left: 8px;
+  top: 347px;
+  overflow: hidden;
+}
+.div {
+  color: var(--white, #ffffff);
+  text-align: left;
+  font-family: var(--h3-font-family, "Inter-Bold", sans-serif);
+  font-size: var(--h3-font-size, 24px);
+  line-height: var(--h3-line-height, 30px);
+  letter-spacing: var(--h3-letter-spacing, -0.02em);
+  font-weight: var(--h3-font-weight, 700);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.arrow-circle-right {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.docs-btn {
+  border-radius: 6px;
+  border-style: solid;
+  border-color: var(--primary, #545f71);
+  border-width: 2px;
+  padding: 12px 16px 12px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 278px;
+  position: absolute;
+  left: calc(50% - 140px);
+  top: calc(50% - -11px);
+  overflow: hidden;
+}
+.docs {
+  flex-shrink: 0;
+  width: 146.38px;
+  height: 24px;
+  position: static;
+}
+.div2 {
+  color: var(--primary, #545f71);
+  text-align: center;
+  font-family: var(--body-heavy-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--body-heavy-font-size, 16px);
+  line-height: var(--body-heavy-line-height, 22px);
+  letter-spacing: var(--body-heavy-letter-spacing, -0.02em);
+  font-weight: var(--body-heavy-font-weight, 600);
+  position: absolute;
+  left: calc(50% - 73.19px);
+  top: 50%;
+  translate: 0 -50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.document-duplicate {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: calc(50% - -49.19px);
+  top: 50%;
+  translate: 0 -50%;
+  overflow: visible;
+}
+.partners-block {
+  position: absolute;
+  inset: 0;
+}
+.images-partners {
+  width: 436.25px;
+  height: 76px;
+  position: static;
+}
+.img-part {
+  background: #d9d9d9;
+  border-radius: 13px;
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: -31px;
+  top: 563.38px;
+}
+.img-part2 {
+  background: #d9d9d9;
+  border-radius: 13px;
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 148.5px;
+  top: 563.38px;
+}
+.img-part3 {
+  background: #d9d9d9;
+  border-radius: 13px;
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 238.25px;
+  top: 563.38px;
+}
+.img-part4 {
+  background: #d9d9d9;
+  border-radius: 13px;
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 60px;
+  top: 563.38px;
+}
+.img-part5 {
+  background: #d9d9d9;
+  border-radius: 13px;
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 239.5px;
+  top: 563.38px;
+}
+.img-part6 {
+  background: #d9d9d9;
+  border-radius: 13px;
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 329.25px;
+  top: 563.38px;
+}
+.div3 {
+  color: var(--secondary, #9ba5b7);
+  text-align: center;
+  font-family: "KantumruyPro-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  position: absolute;
+  left: 81px;
+  top: 530px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-block {
+  background: #2d2d2d;
+  border-radius: 24px 24px 0px 0px;
+  padding: 14px 24px 14px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+  row-gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 375px;
+  height: 126px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  bottom: 0px;
+}
+.authors {
+  flex-shrink: 0;
+  width: 95px;
+  height: 81px;
+  position: static;
+}
+.tg-account {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 16px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: underline;
+  position: absolute;
+  left: 24px;
+  top: 42px;
+}
+.tg-account2 {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 16px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: underline;
+  position: absolute;
+  left: 24px;
+  top: 73px;
+}
+.div4 {
+  color: var(--primary, #545f71);
+  text-align: left;
+  font-family: var(--body-heavy-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--body-heavy-font-size, 16px);
+  line-height: var(--body-heavy-line-height, 22px);
+  letter-spacing: var(--body-heavy-letter-spacing, -0.02em);
+  font-weight: var(--body-heavy-font-weight, 600);
+  position: absolute;
+  left: 24px;
+  top: 14px;
+}
+.support {
+  flex-shrink: 0;
+  width: 157px;
+  height: 50px;
+  position: static;
+}
+.pochta-pochta-com {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: var(--link-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--link-font-size, 16px);
+  line-height: var(--link-line-height, 22px);
+  letter-spacing: var(--link-letter-spacing, -0.02em);
+  font-weight: var(--link-font-weight, 600);
+  text-decoration: underline;
+  position: absolute;
+  left: 175px;
+  top: 42px;
+}
+.div5 {
+  color: var(--primary, #545f71);
+  text-align: left;
+  font-family: var(--body-heavy-font-family, "Inter-SemiBold", sans-serif);
+  font-size: var(--body-heavy-font-size, 16px);
+  line-height: var(--body-heavy-line-height, 22px);
+  letter-spacing: var(--body-heavy-letter-spacing, -0.02em);
+  font-weight: var(--body-heavy-font-weight, 600);
+  position: absolute;
+  left: 175px;
+  top: 14px;
+}
+.main-block {
+  position: absolute;
+  inset: 0;
+}
+.pic-bg {
+  width: 100%;
+  height: 281px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.lending {
+  width: 100%;
+  height: 140px;
+  position: static;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.bg-text {
+  background: rgba(37, 99, 235, 0.25);
+  border-radius: 18px;
+  width: 348px;
+  height: 70px;
+  position: absolute;
+  /* left: 17px;
+  top: 109px; */
+  box-shadow: 0px 4px 30.8px 0px rgba(189, 209, 253, 0.65),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 10px 3px rgba(0, 0, 0, 0.17);
+  backdrop-filter: blur(8px);
+}
+.easy-navigation {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: "KantumruyPro-Bold", sans-serif;
+  font-size: 40px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  position: absolute;
+  /* left: 17px;
+  top: 109px; */
+  width: 347px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.easy-navigation-motto {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: "KantumruyPro-Bold", sans-serif;
+  font-size: 36px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: calc(50% - -35px);
+  text-align: center;
+  margin: 0 0 auto 0;
+}
+.top-panel {
+  display: flex;
+  justify-content: center; /* Центрирует по горизонтали */
+  align-items: center;     /* Центрирует по вертикали */
+  height: 100vh;           /* Высота родителя (например, весь viewport) */
+}
+.bg-panel {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  width: 348px;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+  /* position: absolute; */
+  box-shadow: var(
+    --back-panel-box-shadow,
+    0px 4px 30.8px 0px rgba(189, 209, 253, 0.65),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+    0px 4px 10px 3px rgba(0, 0, 0, 0.17)
+  );
+  backdrop-filter: var(--back-panel-backdrop-filter, blur(8px));
+}
+.building-select {
+  background: var(--button-acent, #2563eb);
+  border-radius: 6px;
+  padding: 12px 16px 12px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 42px;
+  position: absolute;
+  left: 222px;
+  top: 45.19px;
+  overflow: hidden;
+}
+.button-label {
+  color: var(--white, #ffffff);
+  text-align: left;
+  font-family: var(
+    --body-small-heavy-font-family,
+    "Inter-SemiBold",
+    sans-serif
+  );
+  font-size: var(--body-small-heavy-font-size, 14px);
+  line-height: var(--body-small-heavy-line-height, 19px);
+  letter-spacing: var(--body-small-heavy-letter-spacing, -0.02em);
+  font-weight: var(--body-small-heavy-font-weight, 600);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo {
+  width: 163px;
+  height: 42.81px;
+  position: static;
+}
+.rectangle-238 {
+  background: #15171b;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 27px;
+  top: 48.19px;
+  aspect-ratio: 1;
+}
+.easy-navigation2 {
+  color: #15171b;
+  text-align: left;
+  font-family: "NebulicaTMeAll4Designer-Bold", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  position: absolute;
+  left: 74px;
+  top: calc(50% - 351px);
+  width: 116px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 281px;
+  width: 100%;
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Easy Navigation</title>
+  <link rel="stylesheet" href="templateDesign.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="card header">
+      <div class="brand">
+        <strong>Навигация</strong>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle">🌙 / ☀️</button>
+        <div class="status" id="statusText">Готов</div>
+      </div>
+    </header>
+
+    <aside class="card controls">
+      <!-- Выбор вокзала -->
+      <div class="control-row">
+        <label class="label">Вокзал</label>
+        <select id="stationSelect" class="select">
+          <option value="arzamas-1">Арзамас-1</option>
+          <option value="arzamas-2">Арзамас-2</option>
+        </select>
+      </div>
+
+      <!-- Две точки из одного списка -->
+      <div class="control-row">
+        <label class="label">Из</label>
+        <select id="pointA" class="select"></select>
+      </div>
+      <div class="control-row">
+        <label class="label">В</label>
+        <select id="pointB" class="select"></select>
+      </div>
+
+      <div class="actions">
+        <button id="playBtn" class="btn btn-primary">Воспроизвести</button>
+        <button id="editBtn" class="btn btn-ghost">🛠️ Редактировать</button>
+      </div>
+
+      <!-- Панель редактирования -->
+      <div id="editPanel" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
+        <h4 class="section-title">➕ Добавить точку</h4>
+        <div class="actions" style="gap:8px;">
+          <input type="text" id="newPoint" class="select" placeholder="Название точки">
+          <button id="addPointBtn" class="btn btn-primary" style="min-width:auto;">Добавить</button>
+        </div>
+
+        <h4 class="section-title" style="margin-top:16px;">📍 Точки</h4>
+        <div id="pointsList"></div>
+
+        <h4 class="section-title" style="margin-top:16px;">🔗 Привязать видео</h4>
+        <div class="control-row">
+          <label>Из</label>
+          <select id="routeFrom" class="select"></select>
+        </div>
+        <div class="control-row">
+          <label>В</label>
+          <select id="routeTo" class="select"></select>
+        </div>
+        <div class="control-row">
+          <input type="url" id="videoUrl" class="select" placeholder="Ссылка на .mp4 или .m3u8">
+        </div>
+        <button id="saveRouteBtn" class="btn btn-primary" style="width:100%; margin-top:10px;">Сохранить маршрут</button>
+
+        <h4 class="section-title" style="margin-top:16px;">🗺️ Все маршруты</h4>
+        <div id="routesList"></div>
+      </div>
+    </aside>
+
+    <main>
+      <section class="card player-area">
+        <video id="player" controls playsinline></video>
+        <div class="meta">
+          <div id="playerLog" class="log muted">Готов.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.10"></script>
+  <script src="TemplateScript.js"></script>
+</body>
+</html>
