@@ -134,6 +134,9 @@ a{
 .meta{font-size:13px;color:var(--muted);margin-top:10px}
 .log{margin-top:6px}
 .muted{color:var(--muted)}
+.historyBlock{
+  margin-top:12px;
+}
 
 /* Responsive */
 @media (max-width:900px){
@@ -268,4 +271,8 @@ main {
 footer {
     /* Ваши стили подвала из примера выше */
     flex-shrink: 0; /* Запрещает сжиматься */
+}
+
+.historyText{
+  margin-bottom: 6px;
 }
