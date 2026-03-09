@@ -108,6 +108,7 @@ a{
   align-items: end;
   justify-content: flex-end ;
 } */
+
 .container{max-width:1100px; width:100%;  display:grid; grid-template-columns:360px 1fr;  align-items:start}
 .card{background:var(--card); box-shadow:var(--shadow); border-radius:10px; padding:16px}
 .header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
@@ -138,7 +139,9 @@ a{
   margin-top:12px;
   margin-bottom: 12px;
 }
-
+.image{
+  background:#000;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center; aspect-ratio:16/9
+}
 /* Responsive */
 @media (max-width:900px){
   .container{grid-template-columns:1fr; padding-bottom:20px}
