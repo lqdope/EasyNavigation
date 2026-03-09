@@ -1,6 +1,6 @@
 const urlMap = {
   "enter|platform-1": "./platform_1.mp4",
-  "enter|platform-245": "./platform_2_4_5.mp4",
+  "enter|platform-245": "./2_45pl.mp4",
   "enter|cassa": "./cassa.mp4",
   "enter|restroom": "./restroom.mp4",
   "enter|hall-enter-floor1": "./chill-hall1.mp4",
