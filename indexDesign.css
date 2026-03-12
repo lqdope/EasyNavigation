@@ -112,7 +112,11 @@ a{
 .container{max-width:1100px; width:100%;  display:grid; grid-template-columns:360px 1fr;  align-items:start}
 .card{background:var(--card); box-shadow:var(--shadow); border-radius:10px; padding:16px}
 .header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
-.brand{font-size:16px}
+.brand{
+  font-size:16px;
+  display: flex;
+  align-items: center;
+}
 .status{font-size:13px; color:var(--muted)}
 .controls{margin-bottom:12px} .control-row{margin-bottom:12px}
 .label{display:block; font-size:13px; margin-bottom:6px}
