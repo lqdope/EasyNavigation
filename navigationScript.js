@@ -6,13 +6,12 @@ const urlMap = {
   "enter|hall-enter-floor1": "./video/zal1.mp4",
   "enter|hall-enter-floor2": "./video/enter-zal2.mp4",
   "enter|camera-items": "./video/enter-camera.mp4",
-
+  
   "platform-1|enter": "./video/platforms-vokzal.mp4",
   "platform-245|enter": "./video/platforms-vokzal.mp4",
   "restroom|enter": "./video/wc-exit.mp4",
   "hall-enter-floor1|enter": "./video/zal1-exit.mp4",
   "hall-enter-floor2|enter": "./video/zal-exit.mp4",
-
 };
 const fromSelect = document.getElementById("fromSelect");
 const toSelect = document.getElementById("toSelect");
