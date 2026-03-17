@@ -1,10 +1,18 @@
 const urlMap = {
-  "enter|platform-1": "./platform_1.mp4",
-  "enter|platform-245": "./2_45pl.mp4",
-  "enter|cassa": "./cassa.mp4",
-  "enter|restroom": "./restroom.mp4",
-  "enter|hall-enter-floor1": "./chill-hall1.mp4",
-  "enter|hall-enter-floor2": "./hall_2_floor.mp4",
+  "enter|platform-1": "./video/platform_1.mp4",
+  "enter|platform-245": "./video/2_45pl.mp4",
+  "enter|cassa": "./video/enter-cassa.mp4",
+  "enter|restroom": "./video/wcroom.mp4",
+  "enter|hall-enter-floor1": "./video/zal1.mp4",
+  "enter|hall-enter-floor2": "./video/enter-zal2.mp4",
+  "enter|camera-items": "./video/enter-camera.mp4",
+
+  "platform-1|enter": "./video/platforms-vokzal.mp4",
+  "platform-245|enter": "./video/platforms-vokzal.mp4",
+  "restroom|enter": "./video/wc-exit.mp4",
+  "hall-enter-floor1|enter": "./video/zal1-exit.mp4",
+  "hall-enter-floor2|enter": "./video/zal-exit.mp4",
+
 };
 const fromSelect = document.getElementById("fromSelect");
 const toSelect = document.getElementById("toSelect");
@@ -59,7 +67,7 @@ function setVideoSrc(from, to) {
     } else {
       setStatus("HLS недоступен");
       log(
-        "HLS-плейлист выбран, но hls.js не подключён и браузер не поддерживает HLS"
+        "HLS-плейлист выбран, но hls.js не подключён и браузер не поддерживает HLS",
       );
       return;
     }
